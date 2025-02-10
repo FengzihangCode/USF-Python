@@ -60,4 +60,4 @@ jobs:
         with:
           packages-dir: dist/
           username: __token__
-          password: ${{ USF_Python }}
+          password: ${{ secrets.USF_Python }}
