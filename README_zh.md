@@ -1,21 +1,21 @@
 # USF-Python
 语言：<a href="./README.md">English</a>｜简体中文
 
-USF Access Framework for Python
+适用于 Python 的 USF 访问框架
 
 [![Upload Python Package](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml/badge.svg)](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml)
 
-When the newest release only contains description updates, upload to PyPI will be failed.
+当最新的Release仅包含文档更新是，提交到PyPI会失败
 
-## Introduction
-USF-Python is a Python library that provides access to the USF format for efficiency and universality.
+## 介绍
+USF-Python 为效率与通用性而构建的 Python 访问框架
 
-## Features
-- **Lightweight & Compact**: Optimized for efficient storage and fast parsing.
-- **Supports Course Schedules**: Store course names, instructors, locations, time slots, and week rules.
-- **Flexible Week Rules**: Supports "all", "even", and "odd" week patterns.
-- **Simple API**: Easy to read, write, and manipulate USF files.
-- **Cross-Platform**: Works on all platforms supporting Python.
+## 功能
+- **轻量紧凑**: Optimized for efficient storage and fast parsing.
+- **支持课程表**: Store course names, instructors, locations, time slots, and week rules.
+- **弹性周支持s**: Supports "all", "even", and "odd" week patterns.
+- **简单的 API**: Easy to read, write, and manipulate USF files.
+- **跨平台**: Works on all platforms supporting Python.
 
 ## Installation
 You can simply install the package with **pip**
