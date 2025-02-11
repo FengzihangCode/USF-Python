@@ -82,15 +82,15 @@ usf.add_subject(schedule, {
 usf.save(schedule, "new_schedule.usf")
 ```
 
-## USF Format Specification
-USF data is structured as a compact array:
-- **name**: Course name (string)
-- **teacher**: Instructor name (string)
-- **location**: Classroom or venue (string)
-- **time**: List of tuples representing periods, e.g., `[(1, 2)]` means periods 1 and 2
-- **week**: `"all"`, `"even"`, or `"odd"`
+## USF 格式规范
+USF 数据结构为一个紧凑的数组：
+- **name**: 课程名称 (string)
+- **teacher**: 教师姓名 (string)
+- **location**: 教室或场地 (string)
+- **time**: 时间段
+- **week**: `"所有周"`, `"奇数周"`, or `"偶数周"`
 
-Example JSON representation:
+JSON 示例：
 ```json
 {
   "version": 1,
