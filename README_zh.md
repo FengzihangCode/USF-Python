@@ -117,9 +117,9 @@ Example JSON representation:
 }
 ```
 
-## Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests on GitHub.
+## 贡献
+欢迎贡献！请随时在GitHub上打开议题或提交PR
 
-## License
-This project is licensed under the MIT License.
+## 许可证
+该项目是根据 MIT 许可证授权的
 
