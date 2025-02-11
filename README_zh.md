@@ -13,7 +13,7 @@ USF-Python 为效率与通用性而构建的 Python 访问框架
 ## 功能
 - **轻量紧凑**: Optimized for efficient storage and fast parsing.
 - **支持课程表**: Store course names, instructors, locations, time slots, and week rules.
-- **弹性周支持s**: Supports "all", "even", and "odd" week patterns.
+- **弹性周支持**: Supports "all", "even", and "odd" week patterns.
 - **简单的 API**: Easy to read, write, and manipulate USF files.
 - **跨平台**: Works on all platforms supporting Python.
 
