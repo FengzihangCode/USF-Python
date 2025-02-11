@@ -1,4 +1,5 @@
 # USF-Python
+Language: English｜<a href="./README_zh.md">简体中文</a>
 USF Access Framework for Python
 
 [![Upload Python Package](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml/badge.svg)](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml)
