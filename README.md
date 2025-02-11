@@ -2,6 +2,7 @@
 USF Access Framework for Python
 
 [![Upload Python Package](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml/badge.svg)](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml)
+
 When the newest release only contains description updates, upload to PyPI will be failed.
 
 ## Introduction
