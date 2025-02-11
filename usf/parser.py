@@ -1,23 +1,24 @@
 import json
 
 class USFParser:
-    def __init__(self, usf_file):
-        self.usf_file = usf_file
-        self.data = None
+    def __init__(self, filename):
+        """
+        Initialize USF Parser.
 
-    def load(self):
-        """加载USF文件"""
-        with open(self.usf_file, "r", encoding="utf-8") as f:
+        Args:
+            filename (str): Path to USF JSON file.
+        """
+        with open(filename, "r", encoding="utf-8") as f:
             self.data = json.load(f)
 
     def get_subjects(self):
-        """获取课程列表"""
-        if self.data is None:
-            self.load()
-        return self.data.get("subjects", [])
+        """Return the subjects dictionary."""
+        return self.data.get("subjects", {})
 
-    def is_valid(self):
-        """检查USF文件是否合法"""
-        from .validator import USFValidator
-        validator = USFValidator(self.data)
-        return validator.validate()
+    def get_periods(self):
+        """Return the list of periods."""
+        return self.data.get("periods", [])
+
+    def get_timetable(self):
+        """Return the timetable list."""
+        return self.data.get("timetable", [])

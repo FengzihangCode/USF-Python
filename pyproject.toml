@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "usf"
-version = "1.0.0"
+version = "0.1.2"
 description = "A lightweight Universal Schedule Format (USF) parser and generator."
 authors = [{ name = "USF-org", email = "USF-org@outlook.com" }]
 license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.6"
-dependencies = []
+dependencies = ["jsonschema"]
 
 [project.urls]
 Homepage = "https://github.com/USF-org"
