@@ -22,45 +22,19 @@ python setup.py install
 ```
 
 ## Usage
-
-### Reading a USF file
 ```python
 import usf
 
-# Initialize the USF Parser with the file path
-parser = usf.USFParser("schedule.usf")
-
-# Get subjects from the parsed data
-subjects = parser.get_subjects()
-print(subjects)
-
-# Get periods
-periods = parser.get_periods()
-print(periods)
-
-# Get the timetable
-timetable = parser.get_timetable()
-print(timetable)
-```
-
-### Validating a USF file
-```python
-import usf
-
-# Initialize the USF Validator with a schema file
-validator = usf.USFValidator("schema.json")
-
-# Validate the parsed data
-if validator.validate(data):
-    print("Valid USF data")
+# Reading a USF file
+data = usf.read("schedule.usf")
+if usf.is_valid(data):
+    print("Valid USF file")
+    subjects = usf.get_subjects(data)
+    print(subjects)
 else:
-    print("Invalid USF data")
-```
+    print("Invalid USF file")
 
-### Creating a USF file
-···python
-import usf
-
+# Creating a USF file
 # Initialize the USF Generator (version 1 by default)
 usf_generator = usf.USFGenerator()
 
@@ -78,16 +52,9 @@ usf_generator.add_schedule(day=2, week_type="odd", subject="Physics", period_ind
 
 # Generate the USF data and save it to a file
 usf_generator.save_to_file("schedule.usf")
-···
 
-### Adding a Course to an Existing USF File
-```python
-import usf
-
-# Initialize the USF Parser
+# Adding a Course to an Existing USF File
 data = usf.read("schedule.usf")
-
-# Add a new subject
 usf.add_subject(data, {
     "name": "Physics",
     "teacher": "Prof. Johnson",
@@ -95,19 +62,10 @@ usf.add_subject(data, {
     "time": [3, 4],
     "week": "odd"
 })
-
-# Save the updated schedule
 usf.save(data, "updated_schedule.usf")
-```
 
-### Generating a USF File from Scratch
-```python
-import usf
-
-# Initialize the USF Generator
+# Generating a USF File from Scratch
 schedule = usf.create()
-
-# Add a subject
 usf.add_subject(schedule, {
     "name": "Computer Science",
     "teacher": "Ms. Lee",
@@ -115,8 +73,6 @@ usf.add_subject(schedule, {
     "time": [5, 6],
     "week": "even"
 })
-
-# Save the new schedule
 usf.save(schedule, "new_schedule.usf")
 ```
 
