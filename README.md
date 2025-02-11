@@ -38,17 +38,25 @@ else:
 
 ### Creating a USF file
 ```python
-schedule = usf.create()
+import usf
 
-definition = {
-    "name": "Mathematics",
-    "teacher": "Dr. Smith",
-    "location": "Room 101",
-    "time": [(1, 2)],  # Periods
-    "week": "all"  # Every week
-}
-usf.add_subject(schedule, definition)
-usf.save(schedule, "my_schedule.usf")
+# Initialize the USF Generator (version 1 by default)
+usf_generator = usf.USFGenerator()
+
+# Add subjects
+usf_generator.add_subject("Mathematics", simplified_name="Math", teacher="Dr. Smith", room="Room 101")
+usf_generator.add_subject("Physics", simplified_name="Phys", teacher="Prof. Johnson", room="Room 203")
+
+# Add class periods
+usf_generator.add_period("08:00:00", "09:30:00")
+usf_generator.add_period("10:00:00", "11:30:00")
+
+# Add schedule entries
+usf_generator.add_schedule(day=1, week_type="all", subject="Mathematics", period_index=1)  # Monday
+usf_generator.add_schedule(day=2, week_type="odd", subject="Physics", period_index=2)  # Tuesday (Odd Week)
+
+# Generate the USF data and save it to a file
+usf_generator.save_to_file("schedule.usf")
 ```
 
 ### Adding a Course to an Existing USF File
