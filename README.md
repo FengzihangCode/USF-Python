@@ -96,15 +96,27 @@ USF data is structured as a compact array:
 Example JSON representation:
 ```json
 {
-    "subjects": [
-        {
-            "name": "Mathematics",
-            "teacher": "Dr. Smith",
-            "location": "Room 101",
-            "time": [[1, 2]],
-            "week": "all"
-        }
-    ]
+  "version": 1,
+  "subjects": {
+    "Mathematics": {
+      "simplified_name": "Math",
+      "teacher": "Dr. Smith",
+      "room": "Room 101"
+    },
+    "Physics": {
+      "simplified_name": "Phys",
+      "teacher": "Prof. Johnson",
+      "room": "Room 203"
+    }
+  },
+  "periods": [
+    ["08:00:00", "09:30:00"],
+    ["10:00:00", "11:30:00"]
+  ],
+  "timetable": [
+    [1, "all", "Mathematics", 1],
+    [2, "odd", "Physics", 2]
+  ]
 }
 ```
 
