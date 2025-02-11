@@ -121,5 +121,5 @@ Example JSON representation:
 欢迎贡献！请随时在GitHub上打开议题或提交PR
 
 ## 许可证
-该项目是根据 MIT 许可证授权的
+该项目根据 MIT 许可证授权
 
