@@ -5,7 +5,7 @@
 
 [![Upload Python Package](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml/badge.svg)](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml)
 
-当最新的Release仅包含文档更新时，提交到PyPI会失败
+当最新的 Release 仅包含文档更新时，提交到 PyPI 会失败
 
 ## 介绍
 USF-Python 是为效率与通用性而生的 Python 访问框架
