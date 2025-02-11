@@ -1,5 +1,6 @@
 # USF-Python
 USF Access Framework for Python
+[![Upload Python Package](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml/badge.svg)](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml)
 
 ## Introduction
 USF-Python is a Python library that provides access to the USF format for efficiency and universality.
