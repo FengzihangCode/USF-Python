@@ -8,7 +8,7 @@
 当最新的Release仅包含文档更新时，提交到PyPI会失败
 
 ## 介绍
-USF-Python 为效率与通用性而构建的 Python 访问框架
+USF-Python 是为效率与通用性而生的 Python 访问框架
 
 ## 功能
 - **轻量紧凑**: Optimized for efficient storage and fast parsing.
