@@ -1,5 +1,5 @@
 # USF-Python
-语言：<a href="./README.md">English</a>｜<a href="./README_zh.md">简体中文</a>
+语言：<a href="./README.md">English</a>｜简体中文
 
 USF Access Framework for Python
 
