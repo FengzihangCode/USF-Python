@@ -17,17 +17,17 @@ USF-Python 是为效率与通用性而生的 Python 访问框架
 - **简单的 API**: Easy to read, write, and manipulate USF files.
 - **跨平台**: Works on all platforms supporting Python.
 
-## Installation
-You can simply install the package with **pip**
+## 安装
+你可以通过 **pip** 安装
 ```sh
 pip install usf
 ```
-or install it locally
+或在本地通过如下代码安装
 ```sh
 python setup.py install
 ```
 
-## Usage
+## 使用示例
 ```python
 import usf
 
