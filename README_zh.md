@@ -19,11 +19,11 @@ USF-Python 是为效率与通用性而生的 Python 访问框架
 
 ## 安装
 你可以通过 **pip** 安装
-```sh
+```
 pip install usf
 ```
-或在本地通过如下代码安装
-```sh
+或在本地通过如下命令安装
+```
 python setup.py install
 ```
 
