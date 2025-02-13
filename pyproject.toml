@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "usf"
-version = "0.1.3"
+version = "0.2.0"
 description = "A lightweight Universal Schedule Format (USF) parser and generator."
 authors = [{ name = "USF-org", email = "USF-org@outlook.com" }]
 license = { text = "MIT" }

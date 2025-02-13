@@ -8,8 +8,13 @@ class USFParser:
         Args:
             filename (str): Path to USF JSON file.
         """
-        with open(filename, "r", encoding="utf-8") as f:
-            self.data = json.load(f)
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                self.data = json.load(f)
+        except FileNotFoundError:
+            raise FileNotFoundError(f"File '{filename}' not found.")
+        except json.JSONDecodeError:
+            raise ValueError(f"Failed to decode JSON from the file '{filename}'.")
 
     def get_subjects(self):
         """Return the subjects dictionary."""
