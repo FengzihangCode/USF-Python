@@ -1,33 +1,33 @@
 # USF-Python
-Language: English｜<a href="./README_zh.md">简体中文</a>
+语言：<a href="./README.md">English</a>｜简体中文
 
-USF Access Framework for Python
+适用于 Python 的 USF 访问框架
 
 [![Upload Python Package](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml/badge.svg)](https://github.com/USF-org/USF-Python/actions/workflows/python-publish.yml)
 
-When the newest release only contains description updates, upload to PyPI will be failed.
+当最新的 Release 仅包含文档更新时，提交到 PyPI 会失败
 
-## Introduction
-USF-Python is a Python library that provides access to the USF format for efficiency and universality.
+## 介绍
+USF-Python 是为效率与通用性而生的 Python 访问框架
 
-## Features
-- **Lightweight & Compact**: Optimized for efficient storage and fast parsing.
-- **Supports Course Schedules**: Store course names, instructors, locations, time slots, and week rules.
-- **Flexible Week Rules**: Supports "all", "even", and "odd" week patterns.
-- **Simple API**: Easy to read, write, and manipulate USF files.
-- **Cross-Platform**: Works on all platforms supporting Python.
+## 功能
+- **轻量紧凑**: 专为高效存储和快速解析进行了优化
+- **支持课程表**: 存储课程名称、教师、场地、时间段和周规则
+- **弹性周支持**: 支持“每周”、“奇数周”和“偶数周”周规则
+- **简单的 API**: 易于阅读、写入和操作
+- **跨平台**: 适用于所有支持 Python 的平台
 
-## Installation
-You can simply install the package with **pip**
-```sh
+## 安装
+你可以通过 **pip** 安装
+```
 pip install usf
 ```
-or install it locally
-```sh
+或在本地通过如下命令安装
+```
 python setup.py install
 ```
 
-## Usage
+## 使用示例
 ```python
 import usf
 
@@ -82,15 +82,15 @@ usf.add_subject(schedule, {
 usf.save(schedule, "new_schedule.usf")
 ```
 
-## USF Format Specification
-USF data is structured as a compact array:
-- **name**: Course name (string)
-- **teacher**: Instructor name (string)
-- **location**: Classroom or venue (string)
-- **time**: List of tuples representing periods, e.g., `[(1, 2)]` means periods 1 and 2
-- **week**: `"all"`, `"even"`, or `"odd"`
+## USF 格式规范
+USF 数据结构为一个紧凑的数组：
+- **name**: 课程名称 (string)
+- **teacher**: 教师姓名 (string)
+- **location**: 教室或场地 (string)
+- **time**: 时间段
+- **week**: `"所有周"`, `"奇数周"`, or `"偶数周"`
 
-Example JSON representation:
+JSON 示例：
 ```json
 {
   "version": 1,
@@ -117,9 +117,9 @@ Example JSON representation:
 }
 ```
 
-## Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests on GitHub.
+## 贡献
+欢迎贡献！请随时在GitHub上打开议题或提交PR
 
-## License
-This project is licensed under the MIT License.
+## 许可证
+该项目根据 MIT 许可证授权
 
