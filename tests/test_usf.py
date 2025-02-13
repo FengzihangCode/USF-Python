@@ -22,7 +22,7 @@ class TestUSF(unittest.TestCase):
         self.generator.add_schedule(1, "all", "Physics", 2)      # 星期一，第二节，物理
 
         # 生成 USF 数据
-        self.usf_data = self.generator.generate_usf_data()
+        self.usf_data = self.generator.generate()
 
     def test_usf_generation(self):
         """测试 USF 生成"""
@@ -38,7 +38,10 @@ class TestUSF(unittest.TestCase):
 
     def test_usf_parser(self):
         """测试 USF 解析"""
+        # 将生成的 USF 数据转为 JSON 字符串
         json_data = json.dumps(self.usf_data, indent=2)
+
+        # 使用解析器解析数据
         parser = USFParser(json_data)
 
         self.assertEqual(len(parser.get_subjects()), 2)
@@ -63,7 +66,38 @@ class TestUSF(unittest.TestCase):
             "subjects": self.usf_data["subjects"],
             "periods": self.usf_data["periods"]
         }
-        self.assertFalse(validator.validate(invalid_data))
+
+        # 这里我们添加了额外的错误处理来捕获无效数据的校验错误
+        with self.assertRaises(jsonschema.exceptions.ValidationError):
+            validator.validate(invalid_data)
+
+    def test_invalid_period(self):
+        """测试无效时间段"""
+        invalid_periods_data = {
+            "version": 1,
+            "subjects": self.usf_data["subjects"],
+            "periods": [["invalid", "format"]],
+            "timetable": self.usf_data["timetable"]
+        }
+        
+        # 使用校验器验证无效的时间段数据
+        validator = USFValidator()
+        with self.assertRaises(jsonschema.exceptions.ValidationError):
+            validator.validate(invalid_periods_data)
+
+    def test_invalid_subject(self):
+        """测试无效科目"""
+        invalid_subjects_data = {
+            "version": 1,
+            "subjects": {"InvalidSubject": {}},
+            "periods": self.usf_data["periods"],
+            "timetable": self.usf_data["timetable"]
+        }
+
+        # 使用校验器验证无效的科目数据
+        validator = USFValidator()
+        with self.assertRaises(jsonschema.exceptions.ValidationError):
+            validator.validate(invalid_subjects_data)
 
 if __name__ == "__main__":
     unittest.main()
