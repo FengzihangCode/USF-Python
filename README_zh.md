@@ -28,38 +28,39 @@ python setup.py install
 ```
 
 ## 使用示例
+
 ```python
 import usf
 
-# Reading a USF file
+# 读取USF文件
 data = usf.read("schedule.usf")
 if usf.is_valid(data):
-    print("Valid USF file")
+    print("有效的USF文件")
     subjects = usf.get_subjects(data)
     print(subjects)
 else:
-    print("Invalid USF file")
+    print("无效的USF文件")
 
-# Creating a USF file
-# Initialize the USF Generator (version 1 by default)
+# 创建USF文件
+# 初始化USF生成器（默认版本为1）
 usf_generator = usf.USFGenerator()
 
-# Add subjects
+# 添加科目
 usf_generator.add_subject("Mathematics", simplified_name="Math", teacher="Dr. Smith", room="Room 101")
 usf_generator.add_subject("Physics", simplified_name="Phys", teacher="Prof. Johnson", room="Room 203")
 
-# Add class periods
+# 添加课时
 usf_generator.add_period("08:00:00", "09:30:00")
 usf_generator.add_period("10:00:00", "11:30:00")
 
-# Add schedule entries
-usf_generator.add_schedule(day=1, week_type="all", subject="Mathematics", period_index=1)  # Monday
-usf_generator.add_schedule(day=2, week_type="odd", subject="Physics", period_index=2)  # Tuesday (Odd Week)
+# 添加课程安排
+usf_generator.add_schedule(day=1, week_type="all", subject="Mathematics", period_index=1)  # 星期一
+usf_generator.add_schedule(day=2, week_type="odd", subject="Physics", period_index=2)  # 星期二（奇数周）
 
-# Generate the USF data and save it to a file
+# 生成USF数据并保存到文件
 usf_generator.save_to_file("schedule.usf")
 
-# Adding a Course to an Existing USF File
+# 向已有的USF文件添加课程
 data = usf.read("schedule.usf")
 usf.add_subject(data, {
     "name": "Physics",
@@ -70,7 +71,7 @@ usf.add_subject(data, {
 })
 usf.save(data, "updated_schedule.usf")
 
-# Generating a USF File from Scratch
+# 从头开始生成一个新的USF文件
 schedule = usf.create()
 usf.add_subject(schedule, {
     "name": "Computer Science",
